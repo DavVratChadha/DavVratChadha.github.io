@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<style>
+:root {
+    --light_gray: #d0d4dcff;
+    --logo_grey: #625b55ff;
+    --bg_white: #fefefe;
+    --text_black: #1e1e1e;
+    --text_grey: #223843;
+    --nav_menu_bar: #fefefe;
+    --nav_menu_color: #d25349;
+    --ur_blue: #8EE3F5;
+    --foot_bg: #d25349;
+    --text_white: #f4d3d1;
+    --bg_color: #e9e7e3;
+    --tan: #b9aeaa;
+    --new_blu: #95e1e1;
+    --text_brown: #6a524a;
+}
+body{overflow-y: scroll; overflow-x: hidden;}
+
+body {
+    background-color: var(--bg_color);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.header{
+    margin-top: -27px;
+    margin-left: -10px;
+    margin-bottom: 30px;
+    padding-bottom: 14px;
+    padding-left: 10px;
+    position: fixed;
+    height: auto;
+    width: 100%;
+    background-color: var(--foot_bg);
+    color: var(--text_white);
+}
+.menu_button {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.top_bar, .middle_bar, .bottom_bar {
+    height: 7px;
+    width: 45px;
+    margin: 8px 0;
+    transition: 0.5s;
+    background-color: var(--nav_menu_bar)
+}
+.clicked .top_bar {
+    -webkit-transform: rotate(45deg) translate(7px,14px);
+    transform: rotate(45deg) translate(7px,14px);
+}
+.clicked .middle_bar {
+    opacity: 0;
+}
+.clicked .bottom_bar {
+    -webkit-transform: rotate(-45deg) translate(7px,-14px);
+    transform: rotate(-45deg) translate(7px,-14px);
+}
+.blurred{
+    top: 56px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: var(--bg_color);
+    opacity: 0.7;
+    position: fixed;
+}
+.menu_overlay{
+    top: 120px;
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+}
+.menu_container {
+    width: 340px;
+    display: grid;
+    border-radius: 60px;
+    background: var(--nav_menu_color);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,80px);
+    /* change to 4 to add more items in menu */
+    margin-top: 20px;
+    padding-top: 53px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s;
+}
+.navigation{
+    text-align: center;
+    font-size: 35px;
+    font-family: "Roboto";
+    color: var(--tan);
+}
+
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+
+.bg_container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.bg_inner_container{
+    display: block;
+    margin: auto;
+}
+
+.white_con{
+    background-color: var(--new_blu);
+}
+
+.ur_blu {
+    background-color: var(--new_blu);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
+.about_me_con{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.about_me_inner_con{
+    width: 100%;
+    text-align: left;
+    color: var(--text_brown);
+    font-weight: bold;
+}
+
+.footer{
+    margin-left: -10px;
+    margin-top: 30px;
+    padding-top: 30px;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: var(--foot_bg);
+    color: var(--text_white);
+}
+.footer_img{
+    margin: auto;
+    height: 60px; 
+    width: auto;
+    padding: 10px;
+}
+.spacer_1{
+    height: 80px;
+    display: block;
+    visibility: hidden;
+}
+hr.about_me{
+    border-top: 3px solid var(--foot_bg);
+    width: 80%;
+    margin-left: 20px;
+}
+</style>
+<script>
+    function menu_clicked(x) {
+        x.classList.toggle("clicked");
+        var y1 = document.getElementById("nav_menu1");
+        if(y1.style.display == "block")
+            y1.style.display = "none";
+        else
+            y1.style.display = "block";
+
+        var y2 = document.getElementById("nav_menu2");
+        if(y2.style.display == "block")
+            y2.style.display = "none";
+        else
+            y2.style.display = "block";
+    }
+</script>
+
+<head>
+    <title>
+        Dav Vrat Chadha - Home
+    </title>    
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> -->
+    <link rel="icon" type="image/x-icon" href="fav/favicon.jpg">
+</head>
+
+<body>
+<div class="header">
+    <div class="menu_button" onclick="menu_clicked(this)">
+        <div class="top_bar"></div>
+        <div class="middle_bar"></div>
+        <div class="bottom_bar"></div>
+    </div>
+    <b>
+    <div id="nav_menu1" class="blurred"></div>
+    <div id="nav_menu2" class="menu_overlay">
+        <div class="menu_container">
+            <a href="home.html" class="navigation" style="color: var(--nav_menu_bar);">Home</a>
+            <a href="Chadha_Dav_Vrat_Resume.pdf" target="_blank" class="navigation" style="color: var(--nav_menu_bar);">Resume</a>
+            <a href="https://github.com/DavVratChadha" target="_blank" class="navigation" style="color: var(--nav_menu_bar);">Projects</a>
+            <a href="#contact" class="navigation" style="color: var(--nav_menu_bar);">Contact</a>
+        </div>
+    </div>
+    </b>
+    <a href="home.html" style="font-family: Roboto; font-size: 25px; color: var(--bg_white);">
+    <br>
+    Dav Vrat Chadha
+    </a>
+</div>
+<div class="spacer_1"></div>
+<div class="bg_container">    
+    <div class="bg_inner_container">
+        <img src="Me.jpg" title="Thats Me!">
+    </div>
+    <div class="bg_inner_container">
+        <div class="about_me_con">
+            <div class="about_me_con">
+                <div class="about_me_inner_con">
+                    <h1 style="font-family: Roboto; font-size: 30px; padding-left: 20px;">
+                        About Me
+                    </h1>
+                    <hr class="about_me">
+                </div>
+                <div class="about_me_inner_con" style="max-width: 600px;">
+                    <p style="font-family: Roboto; font-size: 25px; padding-left: 20px; padding-right: 20px; font-weight: normal;">
+                        Hey there! I am Dav Vrat Chadha, a 3rd year student studying Machine Intelligence in the Engineering Science Program at University of Toronto.
+                        <br><br>
+                        I am passionate about Backend Software Development and like to write code to solve complicated problems. Occasionally, I also like programming text-based versions of popular games.
+                    </p>
+                    <hr class="about_me">
+                </div>
+                <div class="about_me_inner_con">
+                    <p style="font-family: Roboto; font-size: 22px; padding-left: 20px;">
+                        If you would like to know more, feel free to reach me!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer" id="contact">
+    <a href="https://github.com/DavVratChadha" target="_blank">
+        <img src="github.png" title="Github" class="footer_img">
+    </a>
+    <a href="https://www.linkedin.com/in/davvratchadha/" target="_blank">
+        <img src="linkedin.png" title="LinkedIn" class="footer_img">
+    </a>
+    <a href="https://www.instagram.com/davvrat1/" target="_blank">
+        <img src="instagram.png" title="Instagram" class="footer_img">
+    </a>
+    <a href="Chadha_Dav_Vrat_Resume.pdf" target="_blank">
+        <img src="resume.png" title="Resume" class="footer_img">
+    </a>
+    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=davvrat.chadha@mail.utoronto.ca" target="_blank">
+        <img src="email.png" title="Email" class="footer_img">
+    </a>
+    <br>
+    <p style="font-family: Roboto; font-size: 16px; color: var(--text_white);">
+        &copy; by Dav Vrat Chadha
+        <br><br>
+        This website is still under construction. Please report any bugs you find to me through email. Thanks!
+    </p>
+</div>
+</body>
+</html>
