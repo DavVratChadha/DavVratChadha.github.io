@@ -1,1 +1,0 @@
-# davvratchadha.com
